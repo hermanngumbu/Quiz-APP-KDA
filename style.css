@@ -1,104 +1,307 @@
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background: linear-gradient(90deg, #85F6B8 0%, rgba(142, 217, 235, 0.85) 99.84%);
-background-blend-mode: darken;
-width: 100%;
-height: 100%;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #85F6B8 0%, rgba(142, 217, 235, 0.85) 99.84%);
+    background-blend-mode: darken;
+    font-family: "Inter", "Sans-serif";
+    padding: 5%;
 }
 
-h1{
-width: 572px;
-height: 32px;
-text-align: center;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 32px;
-line-height: 39px;
-color: #555555;
-padding-bottom: 40px;
+.presentation-text {
+    color: #555555;
 }
 
-p{	
- text-align: center;
- padding-top: 20px;
- padding-left: 20px;
- padding-right: 20px;
- padding-bottom: 50px;
- font-family: 'Inter';
- font-style: normal;
- font-weight: 300;
- font-size: 25px;
- line-height: 30px;
- color: #555555;
+.centereditems,
+.startbutton__container,
+#home__page,
+#score__page,
+#quiz__page.show,
+#quiz__page,
+.container,
+html,
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#main_container{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-background-color: white;
-width: 572px;
-height: 750px;
-margin: auto;
-padding-top: 100px;
-margin-top: 50px;
-margin-bottom: 50px;
+.allLinks {
+    text-decoration: none;
 }
 
-.content {
-	margin-top: 8px;
+.container,
+#home__page,
+#score__page,
+#quiz__page.show,
+#quiz__page {
+    flex-direction: column;
+    width: 45%;
+    background: #fff;
+    height: auto;
+    padding: 5%;
 }
 
-label{
-/* position: absolute;
-left: 0%;
-right: 12.63%;
-top: 0%;
-bottom: 84.82%; */
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-color: #555555;
+#home__page,
+#score__page,
+#quiz__page.show,
+#quiz__page {
+    flex-direction: column;
 }
 
-input{
-box-sizing: border-box;
-background: #FFFFFF;
-border: 1px solid #dad9d9;
-width: 500px;
-height: 50px; 
-padding-left: 20px;
-font-size: 15px;
-font-family: 'Inter';
-font-style: normal;
+h1 {
+    margin: 0 0 10% 0;
 }
-#form{
-	padding: 21px 33px 14px;
 
+p {
+    text-align: center;
 }
-.login{
-width: 226px;
-height: 59px;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-position: relative;
-top: 51px;
-left: 133px;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 24px;
-text-align: center;
-background: #028A3D;
-color: #FFFFFF;
+
+form {
+    width: 100%;
+}
+
+form input[type=text],
+form input[type=email] {
+    width: 100%;
+    padding: 2% 5%;
+    margin: 2% 0;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 0.8em;
+}
+
+.startButton,
+.backToHome,
+.exitButton,
+.nextButton {
+    padding: 1em 10%;
+    background: #028A3D;
+    border: none;
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
+.username__container {
+    margin: 10% 0;
+}
+
+.usermail__container {
+    margin: 10% 0 0 0;
+}
+
+.startbutton__container {
+    margin: 5% 0 0;
+}
+
+
+/* Question page */
+
+#quiz__page {
+    display: none;
+}
+
+#quiz__page.show {
+    padding: 0 5%;
+}
+
+#quiz__page.show .question-title {
+    margin: 10% 0 0;
+}
+
+.questionstatus__container {
+    width: 100%;
+}
+
+.status,
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0 0;
+}
+
+.progressbar__container {
+    width: 100%;
+    background: #DDDDDD;
+    border-radius: 1em;
+    margin: 1em 0;
+}
+
+.progressbar {
+    height: 0.6em;
+    width: 100%;
+    background: #028A3D;
+    border-radius: 1em;
+    transition: width 1s ease-in;
+}
+
+.question-form {
+    padding: 0;
+}
+
+.answer__container {
+    display: flex;
+    position: relative;
+}
+
+.answer__container label,
+.answer__container input[type=radio] {
+    margin: 0 2%;
+}
+
+.answer__container label {
+    width: 100%;
+    border: 0.1em solid #C4C4C4;
+    padding: 2% 10%;
+    margin: 1em 0;
+}
+
+.answer__container input[type=radio] {
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    appearance: none;
+    width: 1.2em;
+    height: 1.2em;
+    border-radius: 50%;
+    border: 0.1em solid #C4C4C4;
+}
+
+.answer__container input[type=radio]:checked {
+    background-color: #028A3D;
+    border: 0.1em solid #028A3D;
+}
+
+.answer__container input[type=radio]:checked~label {
+    border: 0.1em solid #028A3D;
+}
+
+input[type=button],
+input[type=submit],
+button {
+    box-shadow: 0px 4px 2px 1px #C4C4C4;
+}
+
+.elementHover,
+.startButton:hover,
+.backToHome:hover,
+.exitButton:hover,
+.nextButton:hover,
+.answer__container label:hover,
+.answer__container input[type=radio]:hover {
+    cursor: pointer;
+}
+
+.buttonContainer {
+    margin: 5% 0 10%;
+}
+
+.nextButton {
+    width: 50%;
+    margin: 0 0 0 5%;
+    padding: 0.8em 10%;
+}
+
+.nextButton:disabled {
+    background: rgba(2, 138, 61, 0.42);
+}
+
+.exitButton {
+    background: #EC880C;
+    padding: 0.8em 10%;
+    width: 50%;
+}
+
+
+/* Score page */
+
+#score__page {
+    display: none;
+}
+
+.lni {
+    font-weight: 900 !important;
+    font-size: 7em !important;
+}
+
+.success {
+    color: #028A3D;
+}
+
+.failed {
+    color: #FF3838;
+}
+
+.backToHome {
+    background: #0880D6;
+}
+
+.username,
+.usermail,
+.icon__container,
+.userscore__container {
+    margin: 5% 0;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 978px) {
+    #home__page,
+    #quiz__page,
+    #quiz__page.show,
+    #score__page {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 977px) and (min-width: 769px) {
+    #home__page,
+    #quiz__page,
+    #quiz__page.show,
+    #score__page {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #home__page,
+    #quiz__page,
+    #quiz__page.show,
+    #score__page {
+        width: 100% !important;
+        margin: 0;
+    }
+    h1 {
+        margin: 10% 0;
+        font-size: 1.4em;
+        color: #555555;
+    }
+    p {
+        font-size: 0.8em;
+    }
+    input[type=radio] {
+        width: 1em !important;
+        height: 1em !important;
+    }
+    label {
+        font-size: 0.8em;
+        color: #555555;
+    }
+    .startButton,
+    .nextButton,
+    .exitButton,
+    .backToHome {
+        padding: 0.6em 5%;
+        margin: 5% 0 10%;
+    }
+    .nextButton {
+        margin-left: 5%;
+    }
 }
